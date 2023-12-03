@@ -12,6 +12,7 @@ var cameras = [
     { name: "Stuttgart 70182, Camera 10", latitude: 48.7758, longitude: 9.1829 }
 ];
 
+var map;
 
 function updateMapMarkers(filteredCameras) {
     map.eachLayer(function (layer) {
@@ -30,15 +31,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchForm = document.getElementById("formsearch");
     const actionButton = document.getElementById("action1");
 
-    actionButton.addEventListener('click', function () {
-        event.preventDefault(); 
+    actionButton.addEventListener('click', function (event) {
+        event.preventDefault();
      
-        const filteredCameras = cameras.filter(camera => {
-            console.log(searchForm.value); 
-            return camera.name.toLowerCase().includes(searchForm.value.toLowerCase().trim());
-        });
+        const searchTerm = searchForm.value.toLowerCase().trim();
+        const selectedCamera = cameras.find(camera => camera.name.toLowerCase().includes(searchTerm));
 
-        updateMapMarkers(filteredCameras);
+        if (selectedCamera) {
+            map.setView([selectedCamera.latitude, selectedCamera.longitude], 12);
+        } else {
+            alert("This camera is not in this list. Please check if you have written it correctly!");
+        }
     });
 });
 

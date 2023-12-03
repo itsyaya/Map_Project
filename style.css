@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: rgb(177, 185, 187);
+    background-color: rgb(230, 229, 229);
 }
 
 .container {
@@ -17,7 +17,6 @@ body {
     min-height: 100vh;
     padding: 20px;
 }
-
 
 .nav {
     display: flex;
@@ -30,17 +29,30 @@ body {
     border-radius: 20px;
 }
 
-.log, .sign_up {
+#logo {
+    height: 90px;
+    width: 100px; 
     padding: 10px 5px;
-    flex: 1;
+    border-radius: 20px; 
+    text-align: left;
+
 }
 
 .sign_up {
     text-align: right;
 }
 
-.log {
-    text-align: left;
+.sign_up button {
+    border-radius: 10px;
+    width: 85px;
+    height: 65px;
+    border: solid black 1px;
+    background-color: rgb(28, 28, 69);
+    color: white;
+}
+
+.sign_up button a {
+    color: white;
 }
 
 .search {
@@ -83,7 +95,6 @@ h1 {
 #map {
     width: 100%;
     height: 600px;
-    /* border: 1px solid #020202; */
     margin-bottom: 20px;
     border-radius: 20px;
 }
@@ -104,15 +115,15 @@ a {
 }
 
 a:hover {
-    color:#8d9e8d;
+    color: #8d9e8d;
 }
+
 .bottom a:hover {
     display: inline-block;
     padding: 2px 3px;
     text-decoration: none;
     background-color: #434544;
     border-radius: 10px;
-    
 }
 
 .bottom p {
